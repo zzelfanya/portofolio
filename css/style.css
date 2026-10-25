@@ -1,0 +1,262 @@
+:root {
+  --primary: #0f3c65;
+  --bg: #fff2ba;
+  --dark: #1c1c1c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 7%;
+  background-color: var(--primary);
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.navbar .navbar-logo span {
+  color: var(--bg);
+}
+
+.navbar .navbar-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Section title (dipakai di semua section: About, Skill, Kontak) */
+section h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 3rem;
+}
+
+section h2 span {
+  color: var(--primary);
+}
+
+/* About Section */
+.aboutme {
+  padding: 7rem 7% 4rem;
+}
+
+.aboutme .row {
+  display: flex;
+  justify-content: center;
+}
+
+.aboutme .about-img {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 60rem;
+}
+
+.aboutme .about-img img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--primary);
+  flex-shrink: 0;
+}
+
+.aboutme .about-img .content {
+  flex: 1 1 20rem;
+}
+
+.aboutme .about-img .content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.aboutme .about-img .content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Skills Section */
+.skills {
+  padding: 4rem 7%;
+  background-color: #fff;
+}
+
+.skills .skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.skills .skills-box {
+  flex: 1 1 16rem;
+  max-width: 18rem;
+  background-color: var(--bg);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.2s;
+}
+
+.skills .skills-box:hover {
+  transform: translateY(-5px);
+}
+
+.skills .skills-box h3 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.skills .skills-box p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contact Section */
+.contact {
+  padding: 4rem 7%;
+}
+
+.contact .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.contact .contact-box {
+  text-align: center;
+  width: 14rem;
+}
+
+.contact .contact-box i {
+  color: var(--primary);
+  width: 32px;
+  height: 32px;
+}
+
+.contact .contact-box h3 {
+  margin: 0.8rem 0 0.4rem;
+  font-size: 1.1rem;
+}
+
+.contact .contact-box p {
+  font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+footer .footer-content a {
+  color: #fff;
+  margin: 0 1rem;
+  font-size: 0.95rem;
+}
+
+footer .footer-content a:hover {
+  color: var(--bg);
+}
+
+footer p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+/* Media Queries */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 758px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 5%;
+  }
+
+  .navbar .navbar-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .aboutme .about-img {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .aboutme .about-img img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .aboutme .about-img .content p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 85%;
+  }
+}
